@@ -7,8 +7,7 @@ import type * as indexType from "../index.js";
 const expectedHostname = "my-machine";
 
 test("using absolute path", async (t) => {
-    const modulePath = new URL("../index.js", import.meta.url);
-    const indexModule = await esmock(fileURLToPath(modulePath), {
+    const indexModule = await esmock(fileURLToPath(new URL("../index.js", import.meta.url)), {
         os: {
             hostname: () => expectedHostname,
         },

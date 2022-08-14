@@ -5,7 +5,8 @@
     "type": "module",
     "main": "index.js",
     "scripts": {
-        "test": "rimraf dist && tsc && cross-env NODE_OPTIONS=--loader=esmock NODE_NO_WARNINGS=1 ava"
+        "test": "rimraf dist && tsc && cross-env NODE_OPTIONS=--loader=esmock NODE_NO_WARNINGS=1 ava",
+        "test-no-maps": "rimraf dist && tsc --sourceMap false && cross-env NODE_OPTIONS=--loader=esmock NODE_NO_WARNINGS=1 ava"
     },
     "repository": {
         "type": "git",
